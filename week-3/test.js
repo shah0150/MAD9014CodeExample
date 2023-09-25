@@ -17,7 +17,7 @@
 let a = 'I am a string';
 let b = false;
 let c = 123.5;
-let d = 123.45;
+let d = 123;
 let e = '42';
 
 console.log(isNaN(a)); // true
