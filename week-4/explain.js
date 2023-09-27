@@ -9,7 +9,7 @@
 //   return number * 2;
 // });
 
-// // doubledNumbers will be [2, 4, 6, 8]
+// doubledNumbers will be [2, 4, 6, 8]
 
 
 // Array filter Method:
@@ -23,7 +23,7 @@
 //   return number % 2 === 0;
 // });
 
-// // evenNumbers will be [2, 4]
+// evenNumbers will be [2, 4]
 
 
 // Array reduce Method:
