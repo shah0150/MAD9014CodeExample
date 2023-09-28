@@ -4,7 +4,11 @@
 
 // Visualization Idea: Imagine you have a conveyor belt with different items on it. You use a machine (the map method) to change each item into something else and collect the transformed items in a basket to create a new array.
 
-// const numbers = [1, 2, 3, 4];
+const numbers = [1, 2, 3, 4];
+const doubledNumbers = numbers.map(number => {
+        return number * 2;
+})
+console.log(doubledNumbers)
 // const doubledNumbers = numbers.map(function(number) {
 //   return number * 2;
 // });
@@ -23,7 +27,13 @@
 //   return number % 2 === 0;
 // });
 
+const numbers1 = [1, 2, 3, 4, 5];
+const evenNumbers = numbers1.filter(number => {
+    return number % 2 ==0;
+})
+console.log(evenNumbers);
 // evenNumbers will be [2, 4]
+
 
 
 // Array reduce Method:
@@ -32,9 +42,9 @@
 
 // Visualization Idea: Imagine you have a shopping list with prices for items, and you want to calculate the total cost. You start with an initial sum of zero and add the price of each item as you go through the list.
 
-// const prices = [10, 20, 30, 40];
-// const totalCost = prices.reduce(function(sum, price) {
-//   return sum + price;
-// }, 0);
+ const prices = [10, 20, 30, 40];
+ const totalCost = prices.reduce((sum, price)=>
+  {return sum + price;
+ }, 0);
 
-// console.log(totalCost); // Output: 100
+ console.log(totalCost)
