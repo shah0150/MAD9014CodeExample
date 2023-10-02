@@ -32,4 +32,18 @@ const library = {
     ]
 }
 
-console.table(library)
+let books =  library.shelves;
+let bookLength = books.length;
+
+for (let i = 0; i < bookLength; i++) {
+    let book = books[i];
+    let bookGenre = book.bookGenre;
+    let bookGenreLength = book.books.length;
+    console.log("length: " + bookGenreLength);
+    console.log("Genre: " + bookGenre);
+    for (let j = 0; j < bookGenreLength; j++) {
+        let bookTitle = book.books[j].title;
+        let bookAuthor = book.books[j].author;
+        console.log("Book name: " + bookTitle + " by " + bookAuthor);
+    }
+}
