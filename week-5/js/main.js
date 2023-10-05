@@ -14,3 +14,4 @@ let newPara = document.getElementById('para1');
 newPara.textContent = myBio;
 
 
+
