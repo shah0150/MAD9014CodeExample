@@ -10,6 +10,10 @@
 
 // Calling event.preventDefault() will prevent the default behavior of an element from triggering, allowing more control over the flow of an application. For example, if you create a form on your page, calling event.preventDefault() on the form's submission will prevent the page from refreshing, allowing you to handle and process the form without causing the entire page to reload.
 
-document.getElementById("prevent").addEventListener("click",(event)=>{
-    event.preventDefault();
-})
+// document.getElementById("prevent").addEventListener("click",(event)=>{
+//     event.preventDefault();
+// })
+/* Disable right-click menu on page */
+// document.addEventListener('contextmenu', function(event) { 
+//     event.preventDefault()
+// });
