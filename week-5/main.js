@@ -1,14 +1,14 @@
 // console.log("I am now connected to main.js");
 
-// document.body.style.backgroundColor = "lightblue";
+document.body.style.backgroundColor = '#eb4034';
 
 let myName = "Adesh Shah";
-let heading = document.getElementsByTagName('h1')[0];
+let heading = document.querySelector('h1');
 heading.textContent = myName;
 
 let myBio = `${myName} is a Professor in Ottawa, Ontario. He teaches full-time at Algonquin College in the School of Media and Design.`;
 
-let paragraph = document.getElementsByTagName('p')[0];
+let paragraph = document.querySelector('p');
 paragraph.textContent = myBio;
 
 // let number1 = document.getElementById('number1');
@@ -19,7 +19,7 @@ paragraph.textContent = myBio;
 //     console.log(number);
 // });
 
-let num = document.getElementById('num1');
+let num = document.querySelector('#num1');
 let num2 = document.getElementById('num2');
 
 document.getElementById('add').addEventListener('click', function() {
