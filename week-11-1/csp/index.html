@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Content Security Policy (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://cdn.example.com;
+        style-src 'self';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
+        frame-ancestors 'none';
+    ">
+ 
+    <title>Content Security Policy (CSP)</title>
+    <style>
+        ul{
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Content Security Policy (CSP) is a security standard implemented by web browsers to mitigate the risk of content injection attacks, such as cross-site scripting (XSS). CSP allows web developers to declare a set of rules that define which resources can be loaded and executed on a web page. This helps prevent the execution of malicious scripts and unauthorized resource loading.
+    </p>
+    <p>Explanation of the directives used in the CSP:</p>
+    <ul>
+
+        <li>default-src 'self'; Sets the default source for content to be the same origin.</li><br>
+        <li>script-src 'self' https://cdn.example.com;: Allows scripts to be loaded from the same origin ('self') and from https://cdn.example.com.</li><br>
+        <li>style-src 'self'; Allows styles to be applied only from the same origin ('self').</li><br>
+        <li>img-src 'self' data:; Permits loading images from the same origin and allows the use of data URLs for images.</li><br>
+        <li>font-src 'self';: Permits loading fonts from the same origin.</li><br>
+        <li>connect-src 'self';: Specifies valid sources for network requests, allowing requests only to the same origin.</li><br>
+        <li>object-src 'none';: Disallows the use of object elements.</li><br>
+        <li>base-uri 'self';: Restricts the document's base URL to the same origin.</li><br>
+        <li>form-action 'self';: Limits form submissions to the same origin.</li><br>
+        <li>frame-ancestors 'none';: Disallows embedding the page in frame, iframe, object, embed, or applet.</li><br>
+    </ul>
+
+    <p>By setting up a Content Security Policy, you can enhance the security of your web application by controlling the sources from which various types of content can be loaded and executed.</p>
+</body>
+</html>
