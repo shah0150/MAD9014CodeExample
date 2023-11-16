@@ -1,16 +1,16 @@
 // Function to set a cookie
 function setCookie(name, value, daysToLive) {
-    var expirationDate = new Date();
+    let expirationDate = new Date();
     expirationDate.setDate(expirationDate.getDate() + daysToLive);
-    var cookieString = name + '=' + encodeURIComponent(value) + '; expires=' + expirationDate.toUTCString() + '; path=/';
+    let cookieString = name + '=' + encodeURIComponent(value) + '; expires=' + expirationDate.toUTCString() + '; path=/';
     document.cookie = cookieString;
 }
 
 // Function to get a cookie
 function getCookie(name) {
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].trim();
+    let cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
         if (cookie.indexOf(name + '=') === 0) {
             return decodeURIComponent(cookie.substring(name.length + 1));
         }
@@ -31,7 +31,7 @@ setCookieButton.addEventListener('click', function () {
     setCookie('username', 'Arianne', 7);
 
     // Display a message or update the UI as needed
-    var outputElement = document.getElementById('output');
+    let outputElement = document.getElementById('output');
     outputElement.innerText = 'Cookie set!';
 
 });
