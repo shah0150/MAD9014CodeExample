@@ -1,0 +1,103 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333333;
+  }
+  
+  #taskInput {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  li {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease;
+
+  }
+  /* Added fade-out animation */
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  button.removeButton {
+    background-color: #ff5555;
+    flex: 1;
+  margin-right: 5px; /* Added margin for spacing */
+  transition: background-color 0.3s ease;
+  }
+  button.removeButton:hover {
+    background-color: #ff3333;
+  }
+  button.updateButton {
+    background-color: #4a90e2;
+  }
+/* Priority styles */
+.low-priority { color: #3498db; }
+.medium-priority { color: #f39c12; }
+.high-priority { color: #e74c3c; }
+
+/* Dark mode styles (updated) */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 600px) {
+    #taskInput {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  

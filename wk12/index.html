@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Example</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <h1>My To-Do List</h1>
+  
+  <input type="text" id="taskInput" placeholder="Add a new task">
+  <button onclick="addTask()">Add Task</button>
+
+  <ul id="taskList"></ul>
+
+  <footer>
+    <p>Developed with ❤️ by Adesh</p>
+    <label for="darkModeToggle">Dark Mode:</label>
+    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
