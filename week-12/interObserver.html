@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intersection Observer Image Gallery</title>
+  <style>
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .image {
+      width: 200px;
+      height: 150px;
+      margin: 10px;
+      background-color: lightgray;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 0.5s ease-in-out;
+    }
+    .image.visible {
+      opacity: 1; /* Visible when in the viewport */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <div class="image" data-src="https://via.placeholder.com/200x150.png"></div>
+    <div class="image" data-src="https://via.placeholder.com/200x150.png"></div>
+    <div class="image" data-src="https://via.placeholder.com/200x150.png"></div>
+    <div class="image" data-src="https://via.placeholder.com/200x150.png"></div>
+    <!-- Add more images as needed -->
+  </div>
+
+  <script>
+    // Step 1: Create IntersectionObserver instance with a callback function and options
+    const intersectionObserver = new IntersectionObserver((entries, observer) => {
+      // Step 3: Callback function invoked on intersections
+      entries.forEach(entry => {
+        const { target, isIntersecting } = entry;
+
+        // Step 4: Actions based on intersection
+        if (isIntersecting) {
+          console.log(`Image is now in the viewport!`);
+          target.classList.add('visible'); // Add a CSS class to trigger a fade-in effect
+
+          // Load the image source from the data attribute
+          const imageSrc = target.getAttribute('data-src');
+          if (imageSrc) {
+            target.style.backgroundImage = `url('${imageSrc}')`;
+          }
+
+          // You can also perform additional actions, such as fetching more images or content
+        } else {
+          console.log(`Image is no longer in the viewport!`);
+        }
+      });
+    }, {
+      // Step 4: Options - root, rootMargin, threshold
+      root: null, // Use the viewport as the root
+      rootMargin: '0px', // No margin
+      threshold: 0.5 // Trigger when 50% of the observed element is in the viewport
+    });
+
+    // Step 2: Observe all images with the class "image"
+    const images = document.querySelectorAll('.image');
+    images.forEach(image => intersectionObserver.observe(image));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutation Observer Example</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+      transition: background-color 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="observedElement">
+    <p>Initial content</p>
+  </div>
+
+  <script>
+    // Step 1: Create MutationObserver instance with a callback function and options
+    const mutationObserver = new MutationObserver((mutations, observer) => {
+      // Step 3: Callback function invoked on mutations
+      mutations.forEach(mutation => {
+        // Step 4: Actions based on mutation type
+        if (mutation.type === 'childList') {
+          console.log('Child list changed!');
+          
+          // Example: Highlight the observed element when new content is added
+          mutation.addedNodes.forEach(addedNode => {
+            if (addedNode.nodeType === 1) { // Check if it's an element node
+              addedNode.classList.add('highlight');
+            }
+          });
+        } else if (mutation.type === 'attributes') {
+          console.log('Attributes changed!');
+          
+          // Example: Change background color when an attribute is modified
+          if (mutation.attributeName === 'data-custom') {
+            mutation.target.style.backgroundColor = 'lightblue';
+          }
+        } else if (mutation.type === 'characterData') {
+          console.log('Character data (text content) changed!');
+        }
+      });
+    });
+
+    // Step 2: Observe a specific DOM element
+    const observedElement = document.getElementById('observedElement');
+    mutationObserver.observe(observedElement, {
+      // Step 4: Options - childList, attributes, characterData, subtree
+      childList: true, // Observe changes to child nodes
+      attributes: true, // Observe changes to attributes
+      characterData: true, // Observe changes to text content
+      subtree: true // Observe changes to descendants (children, grandchildren, etc.)
+    });
+
+    // Example: Simulate changes to trigger the MutationObserver
+    setTimeout(() => {
+      const newParagraph = document.createElement('p');
+      newParagraph.textContent = 'New content added!';
+      newParagraph.setAttribute('data-custom', 'value');
+      observedElement.appendChild(newParagraph);
+    }, 2000);
+  </script>
+
+</body>
+</html>
