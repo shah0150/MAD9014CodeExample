@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intersection Observer</title>
+    <style>
+        .image-container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .image {
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+            background-color: lightgray;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .image.visible{
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="image-container">
+        <div class="image" data-src="https://placehold.co/600x400"></div>
+        <div class="image" data-src="https://placehold.co/600x400"></div>
+        <div class="image" data-src="https://placehold.co/600x400"></div>
+        <div class="image" data-src="https://placehold.co/600x400"></div>
+    </div>
+    <script src="intersectionObserver.js"></script>
+</body>
+</html>
