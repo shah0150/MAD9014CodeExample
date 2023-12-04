@@ -31,3 +31,6 @@
 // In this example, this inside the click event handler refers to the button element, not the global object. It's because the function is called as an event handler for the button, so this points to the element that triggered the event.
 
 // In summary, this in JavaScript represents the current context, and its value can change depending on how and where a function is invoked. It's essential to understand the context in which a function is executed to determine what this refers to in your code.
+
+
+
